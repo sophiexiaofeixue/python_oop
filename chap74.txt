@@ -1,0 +1,26 @@
+class Movie:
+    def __init__(self, title, rating):
+        self.title = title
+        self._rating = rating
+#a decorator is a function that takes a function as argument to extend its
+#functionality without actually modifying it
+
+    @property
+    def rating(self):
+        print('calling the getter')
+        return self._rating
+    
+    @rating.setter
+    def rating(self, new_rating):
+        print('calling the setter')
+        if isinstance(new_rating, float) and 1.0 <= new_rating <= 5.0:
+            self._rating = new_rating
+        else:
+            print('please enter a valida rating')
+
+favorite_movie = Movie('titanic', 4.3)
+print(favorite_movie.rating)
+print(favorite_movie.title)
+favorite_movie.rating = 4.5
+print(favorite_movie.rating)
+
