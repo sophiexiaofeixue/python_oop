@@ -1,0 +1,14 @@
+class Movie:
+    def __init__(self, title, rating):
+        self._title = title
+        self.rating = rating
+    
+    def get_title(self):
+        return self._title
+        # doing the things throught the immterimeitary
+
+my_movie = Movie("the godfather", 4.8)
+
+#print(my_movie.title)
+print(my_movie.get_title())
+print("my favorite movie is:", my_movie.get_title())
